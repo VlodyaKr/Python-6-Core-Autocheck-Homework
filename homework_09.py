@@ -109,3 +109,23 @@ def positive_values(list_payment):
 	
 # 10.
 
+def get_favorites(contacts):
+    return list(filter(lambda contact: contact['favorite'], contacts))
+	
+	
+# 11.
+
+from functools import reduce
+
+
+def sum_numbers(numbers):
+    return reduce(lambda a, b: a + b, numbers, 0)   
+	
+	
+# 12.
+
+from functools import reduce
+
+
+def amount_payment(payment):
+    return reduce(lambda a, b: a + b, filter(lambda pay: pay > 0, payment), 0)
