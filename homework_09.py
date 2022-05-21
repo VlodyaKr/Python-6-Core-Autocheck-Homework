@@ -72,3 +72,40 @@ def sanitize_phone_number(phone):
 	
 # 06.
 
+import re
+
+
+def generator_numbers(string=""):
+    str_to_lst = re.split(r'\W+', string)
+    for word in str_to_lst:
+        if word.isdigit():
+            yield int(word)
+
+
+def sum_profit(string):
+    result = 0
+    for num in generator_numbers(string):
+        result += num
+    return result
+	
+	
+# 07.
+
+def normal_name(list_name):
+    return list(map(str.title, list_name))
+	
+	
+# 08.
+
+def get_emails(list_contacts):
+    return list(map(lambda contact: contact['email'], list_contacts))
+	
+	
+# 09.
+
+def positive_values(list_payment):
+    return list(filter(lambda sum: sum >0, list_payment))
+	
+	
+# 10.
+
